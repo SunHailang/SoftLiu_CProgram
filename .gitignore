@@ -1,0 +1,13 @@
+#####################
+*.db
+*.opendb
+
+#####################
+/Library/
+.vs/
+/Temp/
+/Debug/
+/x64/
+/Win32ApplicationTest/Debug/
+/Win32ApplicationTest/x64/
+
