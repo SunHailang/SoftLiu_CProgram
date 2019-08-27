@@ -8,6 +8,17 @@
 /Temp/
 /Debug/
 /x64/
-/Win32ApplicationTest/Debug/
-/Win32ApplicationTest/x64/
+/Client/Debug/
+/Client/x64/
+
+/Server/Debug/
+/Server/x64/
+
+/UDP_Client/Debug/
+/UDP_Client/x64/
+
+/UDP_Server/Debug/
+/UDP_Server/x64/
+
+/ipch/
 
