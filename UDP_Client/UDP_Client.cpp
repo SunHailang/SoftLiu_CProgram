@@ -27,6 +27,7 @@ int main()
 	{
 		char * sendData = "come from Client Data package.\n";
 		char str[20];
+		printf("input data:");
 		scanf("%s", str);
 		sendData = str;
 

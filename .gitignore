@@ -20,5 +20,8 @@
 /UDP_Server/Debug/
 /UDP_Server/x64/
 
+/Thread_Win32/Debug/
+/Thread_Win32/x64/
+
 /ipch/
 
