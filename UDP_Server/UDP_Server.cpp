@@ -36,15 +36,25 @@ int main()
 
 	sockaddr_in remoteAddr;
 	int nAddrLen = sizeof(remoteAddr);
+	printf("strat recv data...\n");
 	while (true)
 	{
 		char recvData[255];
 		int ret = recvfrom(serSocket, recvData, 255, 0, (sockaddr *)&remoteAddr, &nAddrLen);
+		printf("recv data length: %d\n", ret);
 		if (ret > 0)
 		{
 			recvData[ret] = 0x00;
 			printf("Recv one Connect: %s \r\n", inet_ntoa(remoteAddr.sin_addr));
-			printf(recvData);
+			printf("recv data X: %X\n", recvData);
+			printf("recv data C: %c\n", recvData);
+
+			for (size_t i = 0; i < ret; i++)
+			{
+				printf("%X", recvData[i]);
+			}
+
+			printf("end");
 			printf("\n");
 		}
 
