@@ -16,8 +16,9 @@ int main()
 {
 
 	pthread_t tid;
-	int value = 100;
+	int value = 20;
 	pthread_create(&tid, 0, thread, &value);
+	printf("thread after\n");
 
 	system("pause");
 
@@ -27,11 +28,12 @@ int main()
 void* thread(void* val)
 {
 	int value = *((int*)val);
-	printf("value: %d \n", value);
+	printf("value: %d\n", value);
 	while (value-- > 0)
 	{
-		printf(" %d \n", value);
+		printf(" %d\n", value);
 	}
+	printf("thread end\n");
 	return NULL;
 }
 

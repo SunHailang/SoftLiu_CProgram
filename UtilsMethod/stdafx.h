@@ -13,22 +13,3 @@
 
 
 // TODO: reference additional headers your program requires here
-
-typedef struct {
-
-	unsigned char start_marker[2];
-
-	unsigned char block_size[2];
-
-	unsigned char source_des;
-
-	unsigned char group_num;
-
-	bool service_avail;
-
-	bool ass_health;
-
-	unsigned char lowest_seq[4];
-
-}ebp_header_t;
-

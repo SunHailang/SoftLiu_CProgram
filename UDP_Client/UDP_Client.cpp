@@ -7,10 +7,27 @@
 
 #pragma comment(lib, "ws2_32.lib") 
 
+typedef struct IOM_t
+{
+	int x;
+}IOM_t;
+
+typedef struct IOME_t
+{
+	char a;
+}IOM_et;
+
+IOM_t t;
+IOM_et et;
+
+
 int main()
 {
+	
+
 	WORD socketVersion = MAKEWORD(2, 2);
 	WSADATA wsaData;
+	
 	if (WSAStartup(socketVersion, &wsaData) != 0)
 	{
 
@@ -27,6 +44,24 @@ int main()
 	memset(sin.sin_zero, 0X00, 8); // 函数通常为新申请的内存做初始化工作
 
 	int len = sizeof(sin);
+
+	ebp_header_t *ebp_h;
+	printf("%d",sizeof(ebp_header_t));
+	ebp_h = (ebp_header_t *)malloc(sizeof(ebp_header_t));
+
+	ebp_h->start_marker = 16979;
+	ebp_h->block_size[0] = 0x00;
+	ebp_h->block_size[1] = 0x0c;
+	ebp_h->source_des = 0;
+	ebp_h->group_num = 1;
+	ebp_h->service_avail = true;
+	ebp_h->ass_health = true;
+	for (size_t i = 0; i < sizeof(ebp_h->lowest_seq); i++)
+	{
+		ebp_h->lowest_seq[i] = 0x00;
+	}
+
+	printf("ebp head size: %d\n", sizeof(ebp_header_t));
 
 	while (true)
 	{
@@ -51,7 +86,7 @@ int main()
 
 		printf("send data: %X  -> length: %d\n", msg, sizeof(msg));
 
-		int sendLen = sendto(sclient, msg, sizeof(msg), 0, (sockaddr *)&sin, len);
+		int sendLen = sendto(sclient, sendData, strlen(sendData), 0, (sockaddr *)&sin, len);
 		printf("send len: %d\n", sendLen);
 
 		char recvData[255];

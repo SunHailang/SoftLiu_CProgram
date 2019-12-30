@@ -51,7 +51,7 @@ int main()
 
 			for (size_t i = 0; i < ret; i++)
 			{
-				printf("%X", recvData[i]);
+				printf("%X\n", recvData[i]);
 			}
 
 			printf("end");
