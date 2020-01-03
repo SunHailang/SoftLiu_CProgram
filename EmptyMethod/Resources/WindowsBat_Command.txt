@@ -1,0 +1,30 @@
+﻿# Windows Bat Command 详解
+
+
+echo	#打开回显或关闭请求回显功能，或显示消息。如果没有任何参数，echo 命令将显示当前回显设置。
+@echo off # 一般开头会加这个
+
+rem		# 注释命令
+rem Message
+
+pause	# 暂停命令
+
+call	# 从一个批处理程序调用另一个批处理程序，并且不终止父批处理程序。call 命令接受用作调用目标的标签。
+		# 如果在脚本或批处理文件外使用 Call，它将不会在命令行起作用。
+	call [[Drive:][Path] FileName ] [:label [arguments]]
+	# 参数	指定要调用的批处理程序的位置和名称
+	[Drive:}[Path] FileName
+
+start	# 调用外部程序，所有的DOS命令和命令行程序都可以由start命令来调用。 如：start calc.exe 即可打开Windows的计算器。
+	常用参数：
+	MIN 开始时窗口最小化
+	SEPARATE 在分开的空间内开始 16 位 Windows 程序
+	HIGH 在 HIGH 优先级类别开始应用程序
+	REALTIME 在 REALTIME 优先级类别开始应用程序
+	WAIT 启动应用程序并等候它结束
+	parameters 这些为传送到命令/程序的参数
+
+
+
+
+
