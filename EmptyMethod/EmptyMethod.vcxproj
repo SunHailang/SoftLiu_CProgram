@@ -99,11 +99,13 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\VS2015Program\SoftLiu_CProgram\EmptyMethod;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -141,15 +143,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Src\FileUtils.cpp" />
-    <ClCompile Include="Src\PointerStudy.cpp" />
-    <ClCompile Include="Src\SortUtils.cpp" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="rJsonRead.c" />
+    <ClCompile Include="Src\FileUtils.c" />
+    <ClCompile Include="Src\PointerStudy.c" />
+    <ClCompile Include="Src\SortUtils.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\FileUtils.h" />
     <ClInclude Include="Include\PointerStudy.h" />
     <ClInclude Include="Include\SortUtils.h" />
+    <ClInclude Include="rJsonRead.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
